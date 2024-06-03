@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>PokeList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let pokemon of pokemons">
+      <ion-thumbnail slot="start">
+        <img [src]="pokemon.image" alt="{{ pokemon.name }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ pokemon.name | titlecase }}</h2>
+        <p>{{ pokemon.description }}</p>
+      </ion-label>
+      <ion-button fill="clear" (click)="toggleFavorite(pokemon)">
+        <ion-icon [name]="isFavorite(pokemon) ? 'heart' : 'heart-outline'"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <div class="pagination">
+    <ion-button [disabled]="offset === 0" (click)="previousPage()">Anterior</ion-button>
+    <span> {{ (offset / limit) + 1 }}</span>
+    <ion-button (click)="loadMore()">Próxima</ion-button>
+  </div>
+</ion-content>
+
+
+

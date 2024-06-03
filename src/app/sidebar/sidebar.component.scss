@@ -1,11 +1,27 @@
-:host {
-    ion-toolbar {
-      --background: green;
-      --color: white;
-    }
-  
-    ion-content {
-      --background: green;
-      --color: white;
-    }
-  }
+ion-header {
+  background-color: green;
+  color: white;
+}
+
+ion-title {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+ion-content {
+  --background: green;
+}
+
+ion-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+ion-item {
+  color: rgb(3, 104, 48);
+  text-align: center;
+  font-size: 20px;
+}
