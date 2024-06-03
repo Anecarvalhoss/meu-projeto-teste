@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { SidebarComponent } from './sidebar.component';
 import { RouterModule } from '@angular/router';
+
+import { Pagina1Page } from './pagina1.page';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     IonicModule,
-    RouterModule
+    RouterModule.forChild([{ path: '', component: Pagina1Page }])
   ],
-  declarations: [SidebarComponent],
-  exports: [SidebarComponent]
+  declarations: [Pagina1Page]
 })
-export class SidebarModule {}
+export class Pagina1PageModule { }
